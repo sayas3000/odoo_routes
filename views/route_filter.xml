@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ <data>
+    <!--Inherit quotations search view-->
+    <!--record id="view_rest_partner_bank_inherit_search" model="ir.ui.view">
+      <field name="name">rest.partner.bank.search.expand.filter</field>
+      <field name="model">res.partner.bank</field>
+      <field name="inherit_id" ref="base.view_partner_bank_search"/>
+      <field name="arch" type="xml">
+          <xpath expr="//search" position="inside">
+              <filter string="Rutas" name="routes"/>
+          </xpath>
+      </field>
+    </record-->
+  </data>
+</odoo>
