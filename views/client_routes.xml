@@ -11,12 +11,9 @@
                         <group string="Rutas" name="routes" modifiers="{}"/>
                         <field name="list_routes" string="Lista de Rutas">
                                 <tree editable ="bottom">
-                                    <!--field name="sequence" widget="handle"/-->
-                                    <!--field name="codes" can_create="true" can_write="true"></field>
-                                    <field name="description" can_create="true" can_write="true"></field-->
-
-                                    <field name="codes"/>
-                                    <field name="description"/>
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="codes" can_create="true" can_write="true"></field>
+                                    <field name="description" can_create="true" can_write="true"></field>
                                 </tree>
                         </field>
                         <group>
