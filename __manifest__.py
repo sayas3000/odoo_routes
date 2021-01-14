@@ -26,6 +26,7 @@
          'security/ir.model.access.csv',
         'views/views.xml',
         'views/client_routes.xml',
+        'views/client_order.xml',
         'views/route_filter.xml'
         #'views/templates.xml',
     ],

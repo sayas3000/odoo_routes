@@ -20,18 +20,38 @@
     <record id="route_form" model="ir.ui.view">
         <field name="name">odoo_route.cod_route.form</field>
         <field name="model">odoo_route.cod_route</field>
+        <field name="code">order.code</field>
         <field name="arch" type="xml">
             <form string="Rutas">
                 <sheet>
                     <group>
-
                         <field name="code"></field>
                         <field name="description"></field>
+                        <notebook>
+                            <page string="Clientes">
+                                <group string="Lista de Clientes" name="clients" modifiers="{}"></group>
+
+                                        <field name="list_clients" string="Lista de Clientes">
+                                            <tree editable ="bottom">
+                                                <!-- para que funcione hay que poner las etiquetas que aparecen en el listado de res.partner -->
+                                                <field name="sequence" widget="handle"/>
+                                                <!--field name="sequence" type="int"/-->
+                                                <field name="display_name" can_create="true" can_write="true"></field>
+                                                <field name="phone" can_create="true" can_write="true"></field>
+                                                <field name="email" can_create="true" can_write="true" invisible="1"></field>
+                                            </tree>
+                                        </field>
+
+
+                            </page>
+                        </notebook>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
+
+
 
     <record id="action_view_routes" model="ir.actions.act_window">
         <field name="name">Rutas</field>
@@ -45,6 +65,31 @@
             </p>
         </field>
     </record>
+    <record model="ir.ui.view" id="partner_instructor_form_view">
+        <field name="name">list.client.routes</field>
+            <field name="model">res.partner</field>
+            <!--esto evita errores-->
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook>
+                    <page string="Rutas">
+                        <group string="Rutas" name="routes" modifiers="{}"/>
+                        <field name="list_routes" string="Lista de Rutas">
+                                <tree editable ="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="code" can_create="true" can_write="true"></field>
+                                    <field name="description" can_create="true" can_write="true"></field>
+                                </tree>
+                        </field>
+                        <group>
+                            <button type="action" class="btn-link" name="odoo_routes.action_view_routes" string = "Ver detalle de rutas"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+
           <!--   Cuando se intala el módulo hay que comentar id="cod_routes", mirar esto -->
     <menuitem id="cod_routes" name="Rutas" parent="menu_routes" action="action_view_routes"/>
   </data>

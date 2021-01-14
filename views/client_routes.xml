@@ -12,14 +12,11 @@
                         <field name="list_routes" string="Lista de Rutas">
                                 <tree editable ="bottom">
                                     <field name="sequence" widget="handle"/>
-                                    <field name="codes" can_create="true" can_write="true"></field>
+                                    <field name="code" can_create="true" can_write="true"></field>
                                     <field name="description" can_create="true" can_write="true"></field>
                                 </tree>
                         </field>
                         <group>
-                           <!--button type="action" class="btn-link" name="492"
-                                      context="{'search_default_partner_id': active_id, 'default_partner_id': active_id, 'form_view_ref': 'account.view_company_partner_bank_form'}"
-                                      string="Ver detalle de rutas" colspan="2" modifiers="{}" options="{}"/-->
                             <button type="action" class="btn-link" name="odoo_routes.action_view_routes" string = "Ver detalle de rutas"/>
                         </group>
                     </page>
