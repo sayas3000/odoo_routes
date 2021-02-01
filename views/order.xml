@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="order_clients_inherit_custom" model="ir.ui.view">
+        <field name="name">order.clients.inherit.custom</field>
+        <field name="model">odoo_route.cod_route</field>
+        <field name="inherit_id" ref="odoo_routes.route_form"/>
+        <field name="arch" type="xml">
+            <!--xpath expr="//notebook/page[@name='Clientes']/group[@name='clients']/field[@name='list_clients']/tree']" position="after"-->
+            <xpath expr="//notebook/page[@name='Clientes']/field[@name='list_clients']/tree[@name='lista']" position="after">
+
+                    <field name="route_id"/>
+
+            </xpath>
+        </field>
+    </record>
+</odoo>

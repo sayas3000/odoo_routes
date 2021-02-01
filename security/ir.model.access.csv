@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_odoo_route_cod_route,odoo_route.cod_route,model_odoo_route_cod_route,,1,1,1,1
+access_odoo_routes_route,odoo_routes.route,model_odoo_routes_route,,1,1,1,1
+access_odoo_routes_route_line,odoo_routes.route_line,model_odoo_routes_route_line,,1,1,1,1

@@ -20,7 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2edb2617-c0a3-433c-9fbf-37481e2d07f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/client_order.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/order.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/order_clients.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.github/ISSUE_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../.github/ISSUE_TEMPLATE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.github/PULL_REQUEST_TEMPLATE.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../.github/PULL_REQUEST_TEMPLATE.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
@@ -9504,7 +9505,7 @@
       <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security/ir.model.access.csv" beforeDir="false" afterPath="$PROJECT_DIR$/security/ir.model.access.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client_routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/client_routes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/client_order.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pad/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pad/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pad/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pad/__manifest__.py" afterDir="false" />

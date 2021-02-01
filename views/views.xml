@@ -6,20 +6,19 @@
     <menuitem id="menu_routes" name="Menú Rutas"/>
 
     <record id="odoo_route_cod_route_tree" model="ir.ui.view">
-        <field name="name">odoo_route.cod_route.tree</field>
-        <field name="model">odoo_route.cod_route</field>
+        <field name="name">odoo_routes.route.tree</field>
+        <field name="model">odoo_routes.route</field>
         <field name="arch" type="xml">
             <tree string="Rutas">
-                <!--field name="sequence" widget="handle"/-->
                 <field name="code"></field>
                 <field name="description"></field>
             </tree>
         </field>
     </record>
 
-    <record id="route_form" model="ir.ui.view">
-        <field name="name">odoo_route.cod_route.form</field>
-        <field name="model">odoo_route.cod_route</field>
+    <record id="odoo_routes.route_form" model="ir.ui.view">
+        <field name="name">odoo_routes.route.form</field>
+        <field name="model">odoo_routes.route</field>
         <field name="code">order.code</field>
         <field name="arch" type="xml">
             <form string="Rutas">
@@ -28,21 +27,21 @@
                         <field name="code"></field>
                         <field name="description"></field>
                         <notebook>
-                            <page string="Clientes">
+                            <page string="Clientes" name="Clientes">
                                 <group string="Lista de Clientes" name="clients" modifiers="{}"></group>
+                                  <field name="route_lines"/>
+                                   <!--field name="list_clients" string="Lista de Clientes">
+                                       <tree editable ="bottom" name="lista"-->
+                                           <!-- para que funcione hay que poner las etiquetas que aparecen en el listado de res.partner -->
+                                           <!--field name="sequence" widget="handle"/-->
 
-                                        <field name="list_clients" string="Lista de Clientes">
-                                            <tree editable ="bottom">
-                                                <!-- para que funcione hay que poner las etiquetas que aparecen en el listado de res.partner -->
-                                                <field name="sequence" widget="handle"/>
-                                                <!--field name="sequence" type="int"/-->
-                                                <field name="display_name" can_create="true" can_write="true"></field>
-                                                <field name="phone" can_create="true" can_write="true"></field>
-                                                <field name="email" can_create="true" can_write="true" invisible="1"></field>
-                                            </tree>
-                                        </field>
+                                           <!--field name="order"/-->
 
-
+                                           <!--field name="display_name" can_create="true" can_write="true"></field>
+                                           <field name="phone" can_create="true" can_write="true"></field>
+                                           <field name="email" can_create="true" can_write="true" invisible="1"></field-->
+                                       <!--/tree>
+                                   </field-->
                             </page>
                         </notebook>
                     </group>
@@ -50,13 +49,30 @@
             </form>
         </field>
     </record>
+    <!--record id="ids_action" model="ir.actions.server">
+        <field name="name"/>
+        <field name="model_id" ref="res.partner"/>
+        <field name="state">code</field>
+        <field name="code">action=model.call_ids()</field>
 
+    </record-->
+      <!--record id="order_form" model="ir.ui.view">
+        <field name="name">odoo_route.cod_route.form</field>
+        <field name="model">odoo_route.cod_route</field>
+        <field name="inherit_id">order.code</field>
+        <field name="arch" type="xml">
+           <xpath expr="//notebook/page/field[@name='order_lines']/tree/
+                                                           field[@name='display_id']" position="after">
+                                               <field name="description_head"/>
 
+                                           </xpath>
+        </field>
+      </record-->
 
     <record id="action_view_routes" model="ir.actions.act_window">
         <field name="name">Rutas</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">odoo_route.cod_route</field>
+        <field name="res_model">odoo_routes.route</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
         <field name="help" type="html">
@@ -65,10 +81,11 @@
             </p>
         </field>
     </record>
-    <record model="ir.ui.view" id="partner_instructor_form_view">
+
+    <!--record model="ir.ui.view" id="partner_instructor_form_view">
         <field name="name">list.client.routes</field>
             <field name="model">res.partner</field>
-            <!--esto evita errores-->
+
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <notebook>
@@ -87,8 +104,7 @@
                     </page>
                 </notebook>
             </field>
-        </record>
-
+        </record-->
 
           <!--   Cuando se intala el módulo hay que comentar id="cod_routes", mirar esto -->
     <menuitem id="cod_routes" name="Rutas" parent="menu_routes" action="action_view_routes"/>

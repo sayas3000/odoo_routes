@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- Muestra en el menú desplegable y en la barra de título las Rutas,
+           se necesitan ambos menuitem -->
+    <menuitem id="menu_orders" name="Menú Orden"/>
+
+    <record id="order_clients_tree" model="ir.ui.view">
+        <field name="name">order.clients.tree</field>
+        <field name="model">order.clients</field>
+        <field name="arch" type="xml">
+            <tree string="Orders">
+                <field name="orders"></field>
+            </tree>
+        </field>
+    </record>
+
+      <record id="action_view_orders" model="ir.actions.act_window">
+        <field name="name">Order</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">order.clients</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="order_form" model="ir.ui.view">
+        <field name="name">order.clients.form</field>
+        <field name="model">order.clients</field>
+        <field name="code">order.clients</field>
+        <field name="arch" type="xml">
+            <form string="Orden">
+                <sheet>
+                    <group>
+                        <field name="orders"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+      <!--   Cuando se intala el módulo hay que comentar id="cod_routes", mirar esto -->
+    <menuitem id="cod_orders" name="Orden" parent="menu_orders" action="action_view_orders"/>
+  </data>
+</odoo>

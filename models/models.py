@@ -2,8 +2,21 @@
 
 from odoo import models, fields, api
 
-class RutaRecord(models.Model):
-    _name = "odoo_route.cod_route"
+
+class RouteLineRecord(models.Model):
+    _name = 'odoo_routes.route_line'
+
+   # route_id = fields.Many2one('odoo_route.cod_route', string='IDRoute')
+    client_id = fields.Many2one('res.partner', string='IDClient')
+
+    _rec_name = 'orders'
+    orders = fields.Integer(string='Order')
+
+    route = fields.Many2one('odoo_routes.route_id', copy=True)
+
+
+class RouteRecord(models.Model):
+    _name = "odoo_routes.route"
 
     _order = 'sequence'
     sequence = fields.Integer(string='Sequencia')
@@ -12,10 +25,11 @@ class RutaRecord(models.Model):
     _rec_name = 'code'
     code = fields.Char(string='Código Rutas')
     description = fields.Char(string='Descripción Rutas', required=True)
+    
+    route_lines = fields.One2many('odoo_routes.route_line', 'route', string='lineas', store=True)
 
     #devuelve las rutas
-    codes = fields.Many2one('odoo_route.cod_route', string='Lista Rutas', ondelete='cascade')
-
+    #codes = fields.Many2one('odoo_route.cod_route', string='Lista Rutas', ondelete='cascade')
 
     #controla que no se repitan rutas
     _sql_constraints = [
@@ -25,8 +39,8 @@ class RutaRecord(models.Model):
     #oculta filtros innecesarios
     @api.model
     def fields_get(self, allfields=None, attributes=None):
-        res = super(RutaRecord, self).fields_get(allfields, attributes)
-        fields_to_hide = ['codes',
+        res = super(RouteRecord, self).fields_get(allfields, attributes)
+        fields_to_hide = ['code',
                           'sequence',
                           'id']
         for field in fields_to_hide:
@@ -34,20 +48,35 @@ class RutaRecord(models.Model):
             res[field]['sortable'] = False  # disable field visible in grouping
         return res
 
-class ClientRoutesRecord(models.Model):
-    _inherit = 'res.partner'
-    _order = 'sequence,id'
-    sequence = fields.Integer(string='Orden')
+#class ClientRoutesRecord(models.Model):
+#    _inherit = 'res.partner'
 
-    #devueve la lista con las rutas de ese cliente
-    list_routes = fields.Many2many('odoo_route.cod_route', 'codes')
+#    _order = 'sequence'
+#    sequence = fields.Integer(string='Sequence')
 
-class RouteClients(models.Model):
-    _inherit = 'odoo_route.cod_route'
+    # devueve la lista con las rutas de ese cliente
+#    list_routes = fields.Many2many('odoo_route.cod_route', 'codes')
+
+#class RouteClientsRecord(models.Model):
+#    _inherit = 'odoo_route.cod_route'
 
     #devuelve la lista de clientes que pertenecen a estas rutas, por eso se pone codes
-    list_clients = fields.Many2many('res.partner', 'codes')
+#    list_clients = fields.Many2many('res.partner', 'codes')
 
 
 
+
+
+
+#class RouteOrderRecord(models.Model):
+
+
+ #   _rec_name = 'order'
+ #   order = fields.Many2one('order.clients', string='Orden'
+                           #  , compute='_onchange_orders'
+                          #  , compute="write_many2one"
+                            #, compute="computer_function"
+
+#                            , required=True, ondelete="cascade"
+#                            )
 
