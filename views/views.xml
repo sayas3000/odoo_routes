@@ -29,7 +29,11 @@
                         <notebook>
                             <page string="Clientes" name="Clientes">
                                 <group string="Lista de Clientes" name="clients" modifiers="{}"></group>
-                                  <field name="route_lines"/>
+                                <field name="route_lines">
+                                   <field name="display_name" can_create="true" can_write="true"></field>
+                                </field>
+                                                                    <!--field name="list_clients" string="Lista de Clientes"/-->
+                                <!--field name="display_name"/-->
                                    <!--field name="list_clients" string="Lista de Clientes">
                                        <tree editable ="bottom" name="lista"-->
                                            <!-- para que funcione hay que poner las etiquetas que aparecen en el listado de res.partner -->
@@ -81,6 +85,16 @@
             </p>
         </field>
     </record>
+
+    <!--record model="ir.ui.view" id="line_form_view">
+           <field name="name">odoo_routes.route_line.form</field>
+        <field name="model">odoo_routes.route_line</field>
+
+        <field name="arch" type="xml">
+            <field name="orders"></field>
+        </field>
+
+    </record-->
 
     <!--record model="ir.ui.view" id="partner_instructor_form_view">
         <field name="name">list.client.routes</field>

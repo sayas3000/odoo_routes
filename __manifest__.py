@@ -25,7 +25,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        #'views/client_routes.xml',
+        'views/client_routes.xml',
         #'views/order_clients.xml',
         #'views/order.xml',
         #'views/route_filter.xml'
