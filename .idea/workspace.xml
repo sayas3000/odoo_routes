@@ -9500,10 +9500,6 @@
       <change beforePath="$PROJECT_DIR$/../note_pad/models/note.py" beforeDir="false" afterPath="$PROJECT_DIR$/../note_pad/models/note.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../note_pad/views/note_views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../note_pad/views/note_views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__manifest__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/client_routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/client_routes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pad/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pad/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pad/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pad/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pad/data/pad_demo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pad/data/pad_demo.xml" afterDir="false" />
@@ -22036,7 +22032,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../.." />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">

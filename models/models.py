@@ -32,6 +32,7 @@ class RouteRecord(models.Model):
             res[field]['sortable'] = False  # disable field visible in grouping
         return res
 
+    
 class RouteLineRecord(models.Model):
     _name = 'odoo_routes.route_line'
 
@@ -52,7 +53,7 @@ class ClientRoutesRecord(models.Model):
  #   sequence = fields.Integer(string='Sequence')
 
     # devueve la lista con las rutas de ese cliente
-    list_routes = fields.Many2many('odoo_routes.route', 'codes')
 
+    list_routes = fields.Many2many('odoo_routes.route_line', 'client_id')
 
 

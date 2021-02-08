@@ -12,8 +12,9 @@
                         <field name="list_routes" string="Lista de Rutas">
                                 <tree editable ="bottom">
                                     <!--field name="sequence" widget="handle"/-->
-                                    <field name="code" can_create="true" can_write="true"></field>
-                                    <field name="description" can_create="true" can_write="true"></field>
+                                    <field name="client_id" can_create="true" can_write="true"></field>
+                                    <field name="orders" can_create="true" can_write="true"></field>
+                                    <field name="route" can_ceate="true" can_write="true"></field>
                                 </tree>
                         </field>
                         <group>
