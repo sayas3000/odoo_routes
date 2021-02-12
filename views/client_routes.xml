@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <record model="ir.ui.view" id="partner_instructor_form_view">
+    <record model="ir.ui.view" id="partner_instructor_form_view">
         <field name="name">list.client.routes</field>
             <field name="model">res.partner</field>
             <!--esto evita errores-->
@@ -10,12 +10,16 @@
                     <page string="Rutas">
                         <group string="Rutas" name="routes" modifiers="{}"/>
                         <field name="list_routes" string="Lista de Rutas">
-                                <tree editable ="bottom">
+                                <!--tree editable ="bottom"-->
                                     <!--field name="sequence" widget="handle"/-->
-                                    <field name="client_id" can_create="true" can_write="true"></field>
-                                    <field name="orders" can_create="true" can_write="true"></field>
-                                    <field name="route" can_ceate="true" can_write="true"></field>
-                                </tree>
+<form>
+                                        <field name="client_id"></field>
+                                        <field name="orders" ></field>
+
+                                    <!--field name="code"/>
+                                    <field name="description"/-->
+
+                                </form>
                         </field>
                         <group>
                             <button type="action" class="btn-link" name="odoo_routes.action_view_routes" string = "Ver detalle de rutas"/>
@@ -23,5 +27,5 @@
                     </page>
                 </notebook>
             </field>
-        </record>
+    </record>
 </odoo>

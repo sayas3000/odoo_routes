@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <data>
+    <data>
     <!-- Muestra en el menú desplegable y en la barra de título las Rutas,
            se necesitan ambos menuitem -->
     <menuitem id="menu_routes" name="Menú Rutas"/>
@@ -19,7 +19,7 @@
     <record id="odoo_routes.route_form" model="ir.ui.view">
         <field name="name">odoo_routes.route.form</field>
         <field name="model">odoo_routes.route</field>
-        <field name="code">order.code</field>
+        <!--field name="code">order.code</field-->
         <field name="arch" type="xml">
             <form string="Rutas">
                 <sheet>
@@ -30,22 +30,12 @@
                             <page string="Clientes" name="Clientes">
                                 <group string="Lista de Clientes" name="clients" modifiers="{}"></group>
                                 <field name="route_lines">
-                                   <field name="display_name" can_create="true" can_write="true"></field>
+                                    <tree>
+                                        <field name="client_id"/>
+                                        <field name="orders"/>
+                                        <field name="route" invisible="1"/>
+                                    </tree>
                                 </field>
-                                                                    <!--field name="list_clients" string="Lista de Clientes"/-->
-                                <!--field name="display_name"/-->
-                                   <!--field name="list_clients" string="Lista de Clientes">
-                                       <tree editable ="bottom" name="lista"-->
-                                           <!-- para que funcione hay que poner las etiquetas que aparecen en el listado de res.partner -->
-                                           <!--field name="sequence" widget="handle"/-->
-
-                                           <!--field name="order"/-->
-
-                                           <!--field name="display_name" can_create="true" can_write="true"></field>
-                                           <field name="phone" can_create="true" can_write="true"></field>
-                                           <field name="email" can_create="true" can_write="true" invisible="1"></field-->
-                                       <!--/tree>
-                                   </field-->
                             </page>
                         </notebook>
                     </group>
@@ -53,25 +43,20 @@
             </form>
         </field>
     </record>
-    <!--record id="ids_action" model="ir.actions.server">
-        <field name="name"/>
-        <field name="model_id" ref="res.partner"/>
-        <field name="state">code</field>
-        <field name="code">action=model.call_ids()</field>
 
-    </record-->
-      <!--record id="order_form" model="ir.ui.view">
-        <field name="name">odoo_route.cod_route.form</field>
-        <field name="model">odoo_route.cod_route</field>
-        <field name="inherit_id">order.code</field>
-        <field name="arch" type="xml">
-           <xpath expr="//notebook/page/field[@name='order_lines']/tree/
-                                                           field[@name='display_id']" position="after">
-                                               <field name="description_head"/>
-
-                                           </xpath>
+    <!-- Diseño de ventana de configuración de orden -->
+    <record id="odoo_routes.route_line_form" model="ir.ui.view">
+        <field name="name">odoo_routes.route_line.wizard</field>
+               <field name="model">odoo_routes.route_line</field>
+               <field name="arch" type="xml">
+                       <form>
+                           <group>
+                              <field name="client_id"/>
+                              <field name="orders"/>
+                           </group>
+                       </form>
         </field>
-      </record-->
+    </record>
 
     <record id="action_view_routes" model="ir.actions.act_window">
         <field name="name">Rutas</field>
@@ -86,41 +71,7 @@
         </field>
     </record>
 
-    <!--record model="ir.ui.view" id="line_form_view">
-           <field name="name">odoo_routes.route_line.form</field>
-        <field name="model">odoo_routes.route_line</field>
-
-        <field name="arch" type="xml">
-            <field name="orders"></field>
-        </field>
-
-    </record-->
-
-    <!--record model="ir.ui.view" id="partner_instructor_form_view">
-        <field name="name">list.client.routes</field>
-            <field name="model">res.partner</field>
-
-            <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="arch" type="xml">
-                <notebook>
-                    <page string="Rutas">
-                        <group string="Rutas" name="routes" modifiers="{}"/>
-                        <field name="list_routes" string="Lista de Rutas">
-                                <tree editable ="bottom">
-                                    <field name="sequence" widget="handle"/>
-                                    <field name="code" can_create="true" can_write="true"></field>
-                                    <field name="description" can_create="true" can_write="true"></field>
-                                </tree>
-                        </field>
-                        <group>
-                            <button type="action" class="btn-link" name="odoo_routes.action_view_routes" string = "Ver detalle de rutas"/>
-                        </group>
-                    </page>
-                </notebook>
-            </field>
-        </record-->
-
-          <!--   Cuando se intala el módulo hay que comentar id="cod_routes", mirar esto -->
+    <!--   Cuando se intala el módulo hay que comentar id="cod_routes", mirar esto -->
     <menuitem id="cod_routes" name="Rutas" parent="menu_routes" action="action_view_routes"/>
   </data>
 </odoo>

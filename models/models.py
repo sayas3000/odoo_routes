@@ -13,7 +13,9 @@ class RouteRecord(models.Model):
     code = fields.Char(string='Código Rutas')
     description = fields.Char(string='Descripción Rutas', required=True)
     
-    route_lines = fields.One2many('odoo_routes.route_line', 'route', store=True)
+    route_lines = fields.One2many('odoo_routes.route_line', 'route', string="Orden de Clientes")
+
+    #codes = fields.Many2one('odoo_routes.route', 'Lista Rutas')
 
     #controla que no se repitan rutas
     _sql_constraints = [
@@ -36,14 +38,13 @@ class RouteRecord(models.Model):
 class RouteLineRecord(models.Model):
     _name = 'odoo_routes.route_line'
 
-   # route_id = fields.Many2one('odoo_route.cod_route', string='IDRoute')
-    client_id = fields.Many2one('res.partner', string='IDClient')
+    client_id = fields.Many2one('res.partner', string='Cliente')
 
     _rec_name = 'orders'
-    orders = fields.Integer(string='Order')
+    orders = fields.Integer(string='Orden')
 
-    #route = fields.Many2one('odoo_routes.route_id', copy=True)
-    route = fields.Many2one('odoo_routes.route',  copy=True)
+    route = fields.Many2one('odoo_routes.route', string="Ruta")
+
 
 
 class ClientRoutesRecord(models.Model):
@@ -54,6 +55,7 @@ class ClientRoutesRecord(models.Model):
 
     # devueve la lista con las rutas de ese cliente
 
-    list_routes = fields.Many2many('odoo_routes.route_line', 'client_id')
+    list_routes = fields.Many2many('odoo_routes.route_line', 'route')
+    #list_routes = fields.Many2many('odoo_routes.route', 'codes')
 
 
