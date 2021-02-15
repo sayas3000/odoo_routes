@@ -10,22 +10,19 @@
                     <page string="Rutas">
                         <group string="Rutas" name="routes" modifiers="{}"/>
                         <field name="list_routes" string="Lista de Rutas">
-                                <!--tree editable ="bottom"-->
-                                    <!--field name="sequence" widget="handle"/-->
-<form>
-                                        <field name="client_id"></field>
-                                        <field name="orders" ></field>
-
-                                    <!--field name="code"/>
-                                    <field name="description"/-->
-
-                                </form>
+                              <tree editable ="bottom">
+                                <field name="route"></field>
+                            </tree>
                         </field>
-                        <group>
+
+
+                        <!--group>
                             <button type="action" class="btn-link" name="odoo_routes.action_view_routes" string = "Ver detalle de rutas"/>
-                        </group>
+                        </group-->
                     </page>
                 </notebook>
             </field>
     </record>
+
+
 </odoo>

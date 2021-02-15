@@ -55,7 +55,7 @@ class ClientRoutesRecord(models.Model):
 
     # devueve la lista con las rutas de ese cliente
 
-    list_routes = fields.Many2many('odoo_routes.route_line', 'route')
+    list_routes = fields.One2many('odoo_routes.route_line', 'client_id')
     #list_routes = fields.Many2many('odoo_routes.route', 'codes')
 
 

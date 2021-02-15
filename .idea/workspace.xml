@@ -9502,7 +9502,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/client_routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/client_routes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/views/views.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pad/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pad/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pad/__manifest__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pad/__manifest__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../pad/data/pad_demo.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../pad/data/pad_demo.xml" afterDir="false" />
